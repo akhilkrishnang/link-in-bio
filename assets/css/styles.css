@@ -76,6 +76,8 @@ body{
     justify-content: center;
     background: #fdfdfd;
     color: var(--fg-color);
+    margin-bottom: 1rem;
+    position: relative;
 }
 .bg-lottie{
     position: absolute;
@@ -84,6 +86,21 @@ body{
 .links-stack__item--trending {
     animation: shake-animation 2.72s ease infinite;
     transform-origin: 50% 50%;
+}
+.links-stack__item__thumb {
+    height: 100%;
+    overflow: hidden;
+    border-radius: 0.4rem;
+    position: absolute;
+    left: 0;
+    border-bottom-right-radius: 2.5rem;
+    opacity: 0.8;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #caced4;
+}
+.links-stack__item__thumb > img {
+    height: 100%;
 }
 
 @keyframes shake-animation {
