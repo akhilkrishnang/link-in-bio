@@ -10,7 +10,7 @@
     <meta name="author" content="Akhil Krishnan G">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="assets/css/styles.css?v=1.1">
+    <link rel="stylesheet" href="assets/css/styles.css?v=1.2">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;600&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/966ecd7dd2.js" crossorigin="anonymous"></script>
@@ -54,9 +54,8 @@
                 <div class="social-links__icon"><i class="fab fa-behance"></i></div>
             </a>
         </div>
-        <div class="links-stack">
-            <a :href="item.url" target="_blank" v-for="item in links">
-                
+        <div class="links-stack" v-if="links.length">
+            <a :href="item.url" target="_blank" v-for="item in links">                
                 <div class="links-stack__item" v-bind:class="{ 'links-stack__item--trending': item.trending }">
                     <div class="links-stack__item__thumb" v-if="item.featured_image">
                         <img v-bind:src="'https://cms.akhilkrishnang.com/public/darkroom/assets/'+ item.featured_image.private_hash + '?key=link_thumbnail'"/>
@@ -67,6 +66,9 @@
                 </div>
             </a>
         </div>
+        <div class="links-loader" v-if="!links.length">
+            <lottie-player src="assets/lotties/lottie_load_skel.json" background="transparent"  speed="1"  style="width: 100%;" loop autoplay></lottie-player>
+        </div>
         <div class="bg-lottie">
             <lottie-player src="assets/lotties/lottie_cute_owl.json" background="transparent"  speed="1"  style="width: 10rem; height: 10rem;" loop autoplay></lottie-player>
         </div>
@@ -74,8 +76,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script type="text/javascript" src="assets/js/script.js?v=1.1"></script>    
-    <script type="text/javascript" src="assets/js/controller.js?v=1.1"></script>
+    <script type="text/javascript" src="assets/js/script.js?v=1.2"></script>    
+    <script type="text/javascript" src="assets/js/controller.js?v=1.2"></script>
 </body>
 
 </html>

@@ -6,7 +6,7 @@ var app = new Vue({
     el: '#linkinbio-app',
     data() {
         return {
-            links: [ { "display_name": "Website", "url": "https://www.akhilkrishnang.com/", "trending": true } ] // Default value
+            links: [] // Default value
           }
     },
     mounted () {
